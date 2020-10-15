@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyümölcssaláta</title>
+    <link rel="icon" href="media/strawberry_group.png">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="valasztott" class="toppanel row">
+            <div id="kosar1" onclick="kosarkatt(this)" class="column">
+                <div style="display: none;" class="egyedul" id="kosar1_1"></div>
+                <div style="display: none;" class="masodik" id="kosar1_2"></div>
+            </div>
+            <div id="kosar2" onclick="kosarkatt(this)" class="column">
+                <div style="display: none;" class="egyedul" id="kosar2_1"></div>
+                <div style="display: none;" class="masodik" id="kosar2_2"></div>
+            </div>
+            <div id="kosar3" onclick="kosarkatt(this)" class="column">
+                <div style="display: none;" class="egyedul" id="kosar3_1"></div>
+                <div style="display: none;" class="masodik" id="kosar3_2"></div>
+            </div>
+        </div>
+        <div id="kartyak" class="bottompanel"></div>
+    </div>
+
+    <div id="csillag" style="display: none;" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none'; window.location.reload();">&times;</span>
+    </div>
+
+</body>
+
+</html>

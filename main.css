@@ -1,0 +1,132 @@
+body,
+html {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    background-image: url("media/background.png");
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.toppanel {
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+}
+
+.bottompanel {
+    width: 100%;
+    height: 360px;
+    text-align: center;
+    background-image: url("media/pool.png");
+}
+
+.column {
+    float: left;
+    padding: 54px;
+    background-image: url("media/screen.png");
+    height: 387px;
+    width: 523px;
+    background-size: 80% 80%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+}
+
+
+/* .column::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+
+/* Clear floats after image containers */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.active {
+    border: 5px dashed #0f0;
+}
+
+.masodik {
+    /* position: absolute; */
+    margin-left: 54%;
+    margin-top: 18%;
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 150px;
+    overflow: hidden;
+    /* if you don't want #second to wrap below #first */
+}
+
+.egyedul {
+    margin-left: 35%;
+    margin-top: 23%;
+    margin-right: 10%;
+    height: 180px;
+    width: 150px;
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+}
+
+.elso_ketten {
+    float: left;
+    margin-left: 16%;
+    margin-top: 18%;
+    margin-right: 10%;
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 150px;
+}
+
+.kartya {
+    height: 180px;
+    width: 150px;
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    margin-right: 120px;
+    margin-bottom: 120px;
+    margin-top: 55px;
+}
+
+.alert {
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(0, 0, 0, .5);
+    background-image: url("media/star.svg");
+    background-size: 70% 70%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.closebtn {
+    margin-right: 20px;
+    margin-top: 20px;
+    color: yellow;
+    font-weight: bold;
+    float: right;
+    font-size: 50px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: white;
+}
