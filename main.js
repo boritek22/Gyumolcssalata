@@ -1,10 +1,10 @@
 //Gyümölcsök
-let pakli = ['apple', 'banana', 'cherry', 'lemon', 'melon', 'orange', 'peach', 'pineapple', 'plum', 'strawberry'];
+let gyumolcsok = ['apple', 'banana', 'cherry', 'lemon', 'melon', 'orange', 'peach', 'pineapple', 'plum', 'strawberry'];
 
 var activeElem = null;
 var object2 = { kosar1: 2, kosar2: 2, kosar3: 2 };
 var darabGyumolcs = { kosar1: 0, kosar2: 0, kosar3: 0 };
-var elerhetoP = [];
+var elerheto = [];
 
 window.addEventListener('load', init);
 
@@ -17,11 +17,11 @@ function init() {
 //kiválasztok random 6 db kártyát a 10-ből
 function parancsgenerator() {
     var cardDiv = document.getElementById("kartyak");
-    valasztottP = [];
+    valasztott = [];
     for (var i = 0; i < 6; ++i) {
-        var index = Math.floor(Math.random() * pakli.length);
-        var elem = pakli.splice(index, 1)[0];
-        elerhetoP.push(elem);
+        var index = Math.floor(Math.random() * gyumolcsok.length);
+        var elem = gyumolcsok.splice(index, 1)[0];
+        elerheto.push(elem);
         cardDiv.innerHTML += `<input id='${elem}' onclick='hozzaad(this)' class="kartya" style='background-image: url("media/${elem}_group.png")' type='button'/>`;
     }
 }
@@ -32,7 +32,7 @@ function hozzaad(elem) {
     if (kijelolt.length > 0) {
         kijelolt[0].classList.remove("active");
     }
-    valasztottP.push(elem.value);
+    valasztott.push(elem.value);
     elem.classList.add("active");
 
     activeElem = elem.id;
