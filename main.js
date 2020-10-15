@@ -1,4 +1,4 @@
-// GYÜMÖLCSÖK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Gyümölcsök
 let pakli = ['apple', 'banana', 'cherry', 'lemon', 'melon', 'orange', 'peach', 'pineapple', 'plum', 'strawberry'];
 
 var activeElem = null;
@@ -14,7 +14,7 @@ function init() {
     document.getElementById("valasztott").style.display = "table";
 }
 
-// GENERÁLOK RANDOM 6 KÁRTYÁT, AMIT LÁT A JÁTÉKOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//kiválasztok random 6 db kártyát a 10-ből
 function parancsgenerator() {
     var cardDiv = document.getElementById("kartyak");
     valasztottP = [];
@@ -26,7 +26,7 @@ function parancsgenerator() {
     }
 }
 
-// KIJELÖLÖM AZ ELEMET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Kijelölöm az elemet
 function hozzaad(elem) {
     var kijelolt = document.getElementsByClassName("active");
     if (kijelolt.length > 0) {
@@ -38,9 +38,10 @@ function hozzaad(elem) {
     activeElem = elem.id;
 }
 
+//Berakom a kosárba a gyümölcsöket
 function kosarkatt(elem) {
     if (activeElem != null) {
-        // console.log(elem);
+        //Első gyümölcs berakása
         if (darabGyumolcs[elem.id] == 0) {
             var gyumolcsId = elem.id + "_1";
             document.getElementById(gyumolcsId).style.backgroundImage = `url("media/${activeElem}_1.png")`;
@@ -49,33 +50,25 @@ function kosarkatt(elem) {
             kijelolt[0].disabled = true;
             kijelolt[0].style = `filter: grayscale(100%);`
             kijelolt[0].classList.remove("active");
-            // console.log(activeElem);
-            // console.log(document.getElementById(gyumolcsId));
             activeElem = null;
             darabGyumolcs[elem.id]++;
 
-
+            //Második gyümölcs berakása
         } else if (darabGyumolcs[elem.id] == 1) {
-            var db;
             var elsoGyumolcsId = elem.id + "_1";
             var gyumolcsId = elem.id + "_2";
             document.getElementById(gyumolcsId).style.backgroundImage = `url("media/${activeElem}_1.png")`;
             document.getElementById(gyumolcsId).style.display = "inherit";
             kijelolt = document.getElementsByClassName("active");
             kijelolt[0].disabled = true;
-            db += 1;
             kijelolt[0].style = `filter: grayscale(100%);`;
             kijelolt[0].classList.remove("active");
             document.getElementById(elsoGyumolcsId).classList.remove("egyedul");
             document.getElementById(elsoGyumolcsId).classList.add("elso_ketten");
             activeElem = null;
             darabGyumolcs[elem.id]++;
-            // console.log(darabGyumolcs[elem.id]);
-            // console.log(gyumolcsId);
 
-            // console.log(darabGyumolcs);
-            // console.log(object2);
-            // console.log(darabGyumolcs == object2);
+            //Leellenőrzöm, nyert-e a játékos
             var winning = (JSON.stringify(darabGyumolcs) === JSON.stringify(object2));
             if (winning == true) {
                 document.getElementById("csillag").style.display = "inherit";
